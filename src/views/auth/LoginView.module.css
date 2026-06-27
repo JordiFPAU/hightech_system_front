@@ -1,0 +1,80 @@
+/* src/views/auth/LoginView.module.css */
+
+.contenedor {
+  max-width: 400px;
+  margin: 100px auto; /* Bajamos un poco más el formulario para centrarlo visualmente */
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Sombra suave para verse más premium */
+  border: 1px solid #e2e8f0;
+}
+
+.titulo {
+  color: #1e293b;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.error {
+  color: #ef4444;
+  background-color: #fef2f2;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border: 1px solid #fca5a5;
+  text-align: center;
+}
+
+.grupoInput {
+  margin-bottom: 20px;
+}
+
+.etiqueta {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #475569;
+  font-weight: 500;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #0ea5e9; 
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+}
+
+.boton {
+  width: 100%;
+  padding: 12px;
+  background-color: #0ea5e9; 
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.boton:hover:not(:disabled) {
+  background-color: #0284c7; 
+}
+
+.boton:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}

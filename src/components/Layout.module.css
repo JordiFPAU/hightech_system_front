@@ -1,0 +1,9 @@
+.layoutContenedor {
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+.contenidoDinamico {
+  padding: 90px 30px 30px 280px; 
+  box-sizing: border-box;
+}
