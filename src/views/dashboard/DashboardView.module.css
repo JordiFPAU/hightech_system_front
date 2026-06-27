@@ -1,0 +1,258 @@
+.contenedor {
+    padding: 24px;
+}
+
+.cargando {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Encabezado */
+.encabezado {
+    margin-bottom: 20px;
+}
+
+.titulo {
+    font-size: 22px;
+    font-weight: 500;
+    color: #1e293b;
+    margin-bottom: 4px;
+}
+
+.fecha {
+    font-size: 13px;
+    color: #94a3b8;
+    text-transform: capitalize;
+}
+
+/* Métricas */
+.metricas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.metricaCard {
+    background-color: #f1f5f9;
+    border-radius: 8px;
+    padding: 14px 16px;
+}
+
+.metricaLabel {
+    font-size: 12px;
+    color: #94a3b8;
+    margin-bottom: 6px;
+}
+
+.metricaValor {
+    font-size: 24px;
+    font-weight: 500;
+    color: #1e293b;
+    margin-bottom: 6px;
+}
+
+/* Badges */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: 99px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.badgeSuccess {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.badgeWarning {
+    background-color: #fef9c3;
+    color: #854d0e;
+}
+
+.badgeDanger {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.badgeAccent {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+/* Fila principal */
+.filaPrincipal {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 16px;
+}
+
+/* Cards */
+.card {
+    background-color: #ffffff;
+    border: 0.5px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.cardTitulo {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1e293b;
+}
+
+.cardLink {
+    font-size: 12px;
+    color: #0ea5e9;
+    text-decoration: none;
+}
+
+.cardLink:hover {
+    text-decoration: underline;
+}
+
+/* Tabla */
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla th {
+    font-size: 11px;
+    color: #94a3b8;
+    text-align: left;
+    padding: 0 0 8px;
+    border-bottom: 0.5px solid #e2e8f0;
+    font-weight: 500;
+}
+
+.tabla td {
+    font-size: 13px;
+    color: #475569;
+    padding: 10px 0;
+    border-bottom: 0.5px solid #e2e8f0;
+}
+
+.tabla tr:last-child td {
+    border-bottom: none;
+}
+
+.sinDatos {
+    font-size: 13px;
+    color: #94a3b8;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Alertas de stock */
+.columnaLateral {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.alertaItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 0.5px solid #e2e8f0;
+}
+
+.alertaItem:last-child {
+    border-bottom: none;
+}
+
+.alertaInfo {
+    flex-shrink: 0;
+    min-width: 0;
+}
+
+.alertaNombre {
+    font-size: 13px;
+    color: #1e293b;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 130px;
+}
+
+.alertaStock {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 2px;
+}
+
+.barraContenedor {
+    flex: 1;
+    height: 4px;
+    background-color: #f1f5f9;
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.barra {
+    height: 4px;
+    border-radius: 99px;
+    transition: width 0.3s ease;
+}
+
+.barraRoja {
+    background-color: #ef4444;
+}
+
+.barraAmarilla {
+    background-color: #f59e0b;
+}
+
+.barraVerde {
+    background-color: #22c55e;
+}
+
+/* Mapa placeholder */
+.mapaPlaceholder {
+    background-color: #f8fafc;
+    border: 0.5px dashed #cbd5e1;
+    border-radius: 8px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.mapaIcono {
+    font-size: 24px;
+}
+
+.mapaTexto {
+    font-size: 12px;
+    color: #94a3b8;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .metricas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filaPrincipal {
+        grid-template-columns: 1fr;
+    }
+}

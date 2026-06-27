@@ -13,6 +13,10 @@ export default function Sidebar() {
                 <div className={styles.seccion}>INVENTARIO</div>
                 <Link to="/categorias" className={styles.enlace}>Categorías</Link>
                 <Link to="/productos" className={styles.enlace}>Productos</Link>
+                <Link to="/proveedores" className={styles.enlace}>Proveedores</Link>
+                <Link to="/alertas" className={styles.enlace}>Alertas de Stock</Link>
+
+                
 
                 <div className={styles.seccion}>LOGÍSTICA</div>
                 <Link to="/clientes" className={styles.enlace}>Gestión Clientes</Link>

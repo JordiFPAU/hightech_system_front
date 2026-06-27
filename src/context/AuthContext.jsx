@@ -4,7 +4,7 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem('token'));
-  const [usuario, setUsuario] = useState(null);
+  const [usuario, setUsuario] = useState(JSON.parse(localStorage.getItem("usuario")));
   const [cargando, setCargando] = useState(true);
 
   useEffect(() => {
@@ -18,12 +18,14 @@ export const AuthProvider = ({ children }) => {
 
   const iniciarSesion = (tokenJWT, datosUsuario) => {
     localStorage.setItem('token', tokenJWT);
+    localStorage.setItem('usuario', JSON.stringify(datosUsuario));
     setToken(tokenJWT);
     setUsuario(datosUsuario);
   };
 
   const cerrarSesion = () => {
     localStorage.removeItem('token');
+    localStorage.removeItem('usuario');
     setToken(null);
     setUsuario(null);
   };
