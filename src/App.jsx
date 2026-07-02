@@ -7,6 +7,7 @@ import LoginView from './views/auth/LoginView';
 import DashboardView from './views/dashboard/DashboardView';
 import CategoriasView from './views/categoria/CategoriasView';
 import ProveedoresView from "./views/proveedores/ProveedoresView";
+import ProductosView from './views/productos/ProductosView';
 
 
 
@@ -26,6 +27,7 @@ export default function App() {
               <Route path="/dashboard" element={<DashboardView />} />
               <Route path="/categorias" element={<CategoriasView />} /> 
               <Route path="/proveedores" element={<ProveedoresView />} />
+              <Route path="/productos" element={<ProductosView />} />
             </Route>
           </Route>
 
