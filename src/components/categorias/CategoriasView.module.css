@@ -1,0 +1,323 @@
+.contenedor {
+    padding: 24px;
+}
+
+.encabezado {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.titulo {
+    font-size: 22px;
+    font-weight: 500;
+    color: #1e293b;
+    margin-bottom: 4px;
+}
+
+.subtitulo {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+.botonPrimario {
+    padding: 9px 18px;
+    background-color: #0ea5e9;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.botonPrimario:hover:not(:disabled) {
+    background-color: #0284c7;
+}
+
+.botonPrimario:disabled {
+    background-color: #94a3b8;
+    cursor: not-allowed;
+}
+
+.botonSecundario {
+    padding: 9px 18px;
+    background-color: #f1f5f9;
+    color: #475569;
+    border: 0.5px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.botonSecundario:hover {
+    background-color: #e2e8f0;
+}
+
+.botonEditar {
+    padding: 5px 12px;
+    background-color: #f1f5f9;
+    color: #475569;
+    border: 0.5px solid #cbd5e1;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.botonEditar:hover {
+    background-color: #e2e8f0;
+}
+
+.botonEliminar {
+    padding: 5px 12px;
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 0.5px solid #fca5a5;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.botonEliminar:hover {
+    background-color: #fecaca;
+}
+
+.botonEliminarModal {
+    padding: 9px 18px;
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.botonEliminarModal:hover {
+    background-color: #dc2626;
+}
+
+.botonCerrar {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 4px;
+    line-height: 1;
+}
+
+.botonCerrar:hover {
+    color: #475569;
+}
+
+/* Tabla */
+.tablaContenedor {
+    background-color: #ffffff;
+    border: 0.5px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla th {
+    font-size: 12px;
+    font-weight: 500;
+    color: #94a3b8;
+    text-align: left;
+    padding: 12px 16px;
+    background-color: #f8fafc;
+    border-bottom: 0.5px solid #e2e8f0;
+}
+
+.tabla td {
+    font-size: 14px;
+    color: #475569;
+    padding: 14px 16px;
+    border-bottom: 0.5px solid #f1f5f9;
+}
+
+.tabla tr:last-child td {
+    border-bottom: none;
+}
+
+.tabla tr:hover td {
+    background-color: #f8fafc;
+}
+
+.nombreCell {
+    font-weight: 500;
+    color: #1e293b !important;
+}
+
+.descripcionCell {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.acciones {
+    display: flex;
+    gap: 8px;
+}
+
+.sinDatos {
+    text-align: center;
+    color: #94a3b8;
+    padding: 40px !important;
+    font-size: 14px;
+}
+
+/* Badges */
+.badgeActivo {
+    display: inline-flex;
+    padding: 3px 10px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.badgeInactivo {
+    display: inline-flex;
+    padding: 3px 10px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: #f1f5f9;
+    color: #64748b;
+}
+
+/* Mensajes */
+.cargando {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 14px;
+    padding: 40px;
+}
+
+.error {
+    background-color: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+/* Modal */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    width: 100%;
+    max-width: 460px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.modalPequeno {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.modalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.modalTitulo {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1e293b;
+}
+
+.modalTexto {
+    font-size: 14px;
+    color: #475569;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.modalFooter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Formulario */
+.campo {
+    margin-bottom: 16px;
+}
+
+.etiqueta {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #475569;
+    margin-bottom: 6px;
+}
+
+.input {
+    width: 100%;
+    padding: 9px 12px;
+    border: 0.5px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #1e293b;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.textarea {
+    width: 100%;
+    padding: 9px 12px;
+    border: 0.5px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #1e293b;
+    box-sizing: border-box;
+    resize: vertical;
+    transition: border-color 0.2s;
+    font-family: inherit;
+}
+
+.textarea:focus {
+    outline: none;
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
