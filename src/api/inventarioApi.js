@@ -17,3 +17,5 @@ export const getProductosStockCritico = () => inventarioApi.get('/productos/stoc
 export const createProducto = (data) => inventarioApi.post('/productos', data);
 export const updateProducto = (id, data) => inventarioApi.put(`/productos/${id}`, data);
 export const deleteProducto = (id) => inventarioApi.delete(`/productos/${id}`);
+export const getAlertasNoLeidas = () => inventarioApi.get('/alertas/no-leidas');
+export const getAlertasPorProducto = (productoId) => inventarioApi.get(`/alertas/producto/${productoId}`);

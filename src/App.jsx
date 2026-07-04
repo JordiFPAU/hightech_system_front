@@ -8,6 +8,9 @@ import DashboardView from './views/dashboard/DashboardView';
 import CategoriasView from './views/categoria/CategoriasView';
 import ProveedoresView from "./views/proveedores/ProveedoresView";
 import ProductosView from './views/productos/ProductosView';
+import AlertasView from './views/alertas/AlertasView';
+import ClientesView from './views/clientes/ClientesView';
+
 
 
 
@@ -28,6 +31,8 @@ export default function App() {
               <Route path="/categorias" element={<CategoriasView />} /> 
               <Route path="/proveedores" element={<ProveedoresView />} />
               <Route path="/productos" element={<ProductosView />} />
+              <Route path="/alertas" element={<AlertasView />} />
+              <Route path="/clientes" element={<ClientesView />} />
             </Route>
           </Route>
 

@@ -96,12 +96,13 @@ export default function ProductoModalForm({
                             <label className={styles.etiqueta}>Stock actual</label>
                             <input
                                 type="number"
-                                min="0"
-                                className={styles.input}
-                                placeholder="0"
+                                readOnly
+                                className={`${styles.input} ${formStyles.inputReadOnly}`}
                                 value={form.stockActual}
-                                onChange={e => onChange({ ...form, stockActual: e.target.value })}
                             />
+                            <span className={formStyles.ayuda}>
+                                Para modificar el stock usa el botón "Stock"
+                            </span>
                         </div>
 
                         <div className={styles.campo}>
