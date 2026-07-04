@@ -1,10 +1,9 @@
-import React, {useEffect, useState, useContext} from "react"; 
-import { AuthContext } from "../../context/AuthContext";
-import { inventarioApi, logisticaApi, authApi } from '../../api/axiosInstance';
+import React, {useEffect, useState} from "react"; 
+import { inventarioApi, logisticaApi } from '../../api/axiosInstance';
 import styles from "./DashboardView.module.css";
 
 export default function DashboardView() {
-    const { usuario } = useContext(AuthContext);
+   
 
     const [metricas, setMetricas] = useState({
         totalProductos: 0,

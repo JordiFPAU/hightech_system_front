@@ -1,0 +1,52 @@
+.pedidoInfo {
+    font-size: 13px;
+    color: #475569;
+    margin-bottom: 12px;
+}
+
+.estadoActual {
+    font-size: 13px;
+    color: #475569;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.badge {
+    display: inline-flex;
+    padding: 3px 10px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.opcionesEstado {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.opcion {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border: 0.5px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.opcion input[type="radio"] {
+    accent-color: #0ea5e9;
+}
+
+.opcion:hover {
+    background-color: #f8fafc;
+}
+
+.opcionSeleccionada {
+    background-color: #f0f9ff;
+    border-color: #bae6fd;
+}

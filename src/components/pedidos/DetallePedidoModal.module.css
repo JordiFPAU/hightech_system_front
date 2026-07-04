@@ -1,0 +1,95 @@
+.modal {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.factura {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 2px;
+}
+
+.infoGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    background-color: #f8fafc;
+    border: 0.5px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+.infoItem {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.infoCompleto {
+    grid-column: 1 / -1;
+}
+
+.infoLabel {
+    font-size: 11px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.infoValor {
+    font-size: 13px;
+    color: #1e293b;
+}
+
+.badge {
+    display: inline-flex;
+    padding: 3px 10px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 500;
+    width: fit-content;
+}
+
+.urgente {
+    font-size: 13px;
+    color: #854d0e;
+    font-weight: 500;
+}
+
+.seccionTitulo {
+    font-size: 13px;
+    font-weight: 500;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+}
+
+.tablaContenedor {
+    border: 0.5px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.total {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #475569;
+    padding: 8px 0;
+}
+
+.total strong {
+    font-size: 16px;
+    color: #1e293b;
+}

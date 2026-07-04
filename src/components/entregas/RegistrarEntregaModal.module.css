@@ -1,0 +1,33 @@
+.opcionesEstado {
+    display: flex;
+    gap: 8px;
+}
+
+.opcion {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border: 0.5px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #475569;
+    transition: background-color 0.15s;
+    flex: 1;
+    justify-content: center;
+}
+
+.opcion input[type="radio"] {
+    accent-color: #0ea5e9;
+}
+
+.opcion:hover {
+    background-color: #f8fafc;
+}
+
+.opcionSeleccionada {
+    background-color: #f0f9ff;
+    border-color: #bae6fd;
+    color: #0369a1;
+}

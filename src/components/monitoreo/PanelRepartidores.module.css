@@ -1,0 +1,101 @@
+.panel {
+    background-color: #ffffff;
+    border: 0.5px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border-bottom: 0.5px solid #e2e8f0;
+    background-color: #f8fafc;
+}
+
+.titulo {
+    font-size: 13px;
+    font-weight: 500;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.actualizacion {
+    font-size: 9px;
+    color: #94a3b8;
+}
+
+.lista {
+    padding: 8px;
+}
+
+.sinDatos {
+    font-size: 13px;
+    color: #94a3b8;
+    text-align: center;
+    padding: 20px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 8px;
+    border-radius: 8px;
+    transition: background-color 0.15s;
+}
+
+.item:hover {
+    background-color: #f8fafc;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #dbeafe;
+    color: #1d4ed8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.info {
+    flex: 1;
+    min-width: 0;
+}
+
+.nombre {
+    font-size: 13px;
+    font-weight: 500;
+    color: #1e293b;
+}
+
+.estado {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.indicador {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.indicadorActivo {
+    background-color: #22c55e;
+}
+
+.indicadorInactivo {
+    background-color: #cbd5e1;
+}

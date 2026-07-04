@@ -1,0 +1,33 @@
+.contenedorMapa {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 0.5px solid #e2e8f0;
+    height: 500px;
+}
+
+.mapa {
+    width: 100%;
+    height: 100%;
+}
+
+.popup {
+    min-width: 180px;
+}
+
+.popupNombre {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 4px;
+}
+
+.popupCoords {
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 4px;
+}
+
+.popupFecha {
+    font-size: 11px;
+    color: #94a3b8;
+}

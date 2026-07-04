@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { getPuntosEntrega, createPuntoEntrega, deletePuntoEntrega } from '../../api/logisticaApi';
 import styles from '../categorias/CategoriasView.module.css';
 import puntoStyles from './PuntosEntregaModal.module.css';
@@ -19,13 +19,9 @@ export default function PuntosEntregaModal({ abierto, cliente, onCerrar }) {
     const [error, setError] = useState(null);
     const [mostrarForm, setMostrarForm] = useState(false);
 
-    useEffect(() => {
-        if (abierto && cliente) {
-            cargarPuntos();
-        }
-    }, [abierto, cliente]);
 
-    const cargarPuntos = async () => {
+
+    const cargarPuntos = useCallback(async () => {
         try {
             setCargando(true);
             const res = await getPuntosEntrega(cliente.id);
@@ -35,7 +31,13 @@ export default function PuntosEntregaModal({ abierto, cliente, onCerrar }) {
         } finally {
             setCargando(false);
         }
-    };
+    }, [cliente]);
+
+    useEffect(() => {
+        if (abierto && cliente) {
+            cargarPuntos();
+        }
+    }, [abierto, cliente, cargarPuntos]);
 
     const manejarCrear = async (e) => {
         e.preventDefault();

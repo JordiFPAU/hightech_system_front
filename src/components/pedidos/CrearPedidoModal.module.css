@@ -1,0 +1,109 @@
+.modal {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    width: 100%;
+    max-width: 680px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.seccion {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 0.5px solid #e2e8f0;
+}
+
+.seccion:last-of-type {
+    border-bottom: none;
+}
+
+.seccionHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.seccionTitulo {
+    font-size: 13px;
+    font-weight: 500;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+}
+
+.grilla {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 16px;
+}
+
+.checkLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #475569;
+    cursor: pointer;
+    margin-top: 24px;
+}
+
+.itemRow {
+    display: grid;
+    grid-template-columns: 1fr 100px 100px 32px;
+    gap: 8px;
+    align-items: flex-end;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid #f1f5f9;
+}
+
+.itemRow:last-of-type {
+    border-bottom: none;
+}
+
+.itemProducto {}
+.itemCantidad {}
+.itemPrecio {}
+
+.botonEliminarItem {
+    background: none;
+    border: 0.5px solid #fca5a5;
+    border-radius: 6px;
+    color: #ef4444;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 8px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.botonEliminarItem:hover:not(:disabled) {
+    background-color: #fee2e2;
+}
+
+.botonEliminarItem:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.total {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+    font-size: 14px;
+    color: #475569;
+}
+
+.total strong {
+    font-size: 16px;
+    color: #1e293b;
+}

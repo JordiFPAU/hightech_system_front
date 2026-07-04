@@ -1,0 +1,23 @@
+.badge {
+    display: inline-flex;
+    padding: 3px 10px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.badgeUrgente {
+    display: inline-flex;
+    padding: 3px 10px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: #fef9c3;
+    color: #854d0e;
+}
+
+.fecha {
+    font-size: 12px;
+    color: #94a3b8;
+    white-space: nowrap;
+}
