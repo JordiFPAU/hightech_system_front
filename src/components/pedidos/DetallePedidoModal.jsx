@@ -72,7 +72,7 @@ export default function DetallePedidoModal({ abierto, pedido, onCerrar }) {
                     </div>
                     {pedido.esUrgente && (
                         <div className={detalleStyles.infoItem}>
-                            <span className={detalleStyles.urgente}>⚡ Entrega urgente</span>
+                            <span className={detalleStyles.urgente}>Entrega urgente</span>
                         </div>
                     )}
                     {pedido.observaciones && (
