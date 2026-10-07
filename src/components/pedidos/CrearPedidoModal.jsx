@@ -4,6 +4,7 @@ import { getProductos } from '../../api/inventarioApi';
 import { calcularTotalPedido } from '../../utils/pedidoUtils';
 import styles from '../categorias/CategoriasView.module.css';
 import modalStyles from './CrearPedidoModal.module.css';
+import { getUsuarios } from "../../api/authApi";
 
 const ITEM_INICIAL = { productoId: '', cantidad: 1, precioUnitario: '' };
 
@@ -14,6 +15,7 @@ export default function CrearPedidoModal({
     guardando,
     errorForm
 }) {
+    const [repartidores, setRepartidores] = useState([]);
     const [clientes, setClientes] = useState([]);
     const [productos, setProductos] = useState([]);
     const [puntos, setPuntos] = useState([]);
@@ -21,6 +23,7 @@ export default function CrearPedidoModal({
     const [form, setForm] = useState({
         clienteId: '',
         puntoEntregaId: '',
+        repartidorId: '',
         numeroFactura: '',
         esUrgente: false,
         observaciones: '',
@@ -37,12 +40,14 @@ export default function CrearPedidoModal({
     }, [form.clienteId]);
 
     const cargarDatos = async () => {
-        const [clientesRes, productosRes] = await Promise.all([
+        const [clientesRes, productosRes, usuariosRes] = await Promise.all([
             getClientes(),
-            getProductos()
+            getProductos(),
+            getUsuarios()
         ]);
         setClientes(clientesRes.data);
         setProductos(productosRes.data);
+        setRepartidores(usuariosRes.data.filter(u => u.rol?.nombre === 'REPARTIDOR'));
     };
 
     const cargarPuntos = async (clienteId) => {
@@ -249,6 +254,22 @@ export default function CrearPedidoModal({
                                 <strong>${totalEstimado.toFixed(2)}</strong>
                             </div>
                         )}
+                    </div>
+
+                    <div className={styles.campo}>
+                        <label className={styles.etiqueta}>Repartidor</label>
+                        <select
+                            className={styles.input}
+                            value={form.repartidorId}
+                            onChange={e => setForm({ ...form, repartidorId: e.target.value })}
+                        >
+                            <option value="">Sin asignar</option>
+                            {repartidores.map(r => (
+                                <option key={r.id} value={r.id}>
+                                    {r.nombre} {r.apellido}
+                                </option>
+                            ))}
+                        </select>
                     </div>
 
                     <div className={styles.modalFooter}>

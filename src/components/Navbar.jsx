@@ -1,22 +1,34 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
-import styles from './Navbar.module.css'; 
+import { useNavigate } from 'react-router-dom';
+import styles from './Navbar.module.css';
 
-export default function Navbar() {
-  const { usuario, cerrarSesion } = useContext(AuthContext);
+export default function Navbar({ onAbrirMenu }) {
+    const { usuario, cerrarSesion } = useContext(AuthContext);
+    const navigate = useNavigate();
 
-  return (
-    <div className={styles.navbar}>
-      <span className={styles.textoPanel}>Panel de Control</span>
-      
-      <div className={styles.usuarioSeccion}>
-        <span className={styles.email}>
-          {usuario?.email || 'Admin Conectado'}
-        </span>
-        <button onClick={cerrarSesion} className={styles.botonSalir}>
-          Cerrar Sesión
-        </button>
-      </div>
-    </div>
-  );
+    const manejarCerrarSesion = () => {
+        cerrarSesion();
+        navigate('/login');
+    };
+
+    return (
+        <div className={styles.navbar}>
+            <div className={styles.izquierda}>
+                <button className={styles.botonMenu} onClick={onAbrirMenu}>
+                    ☰
+                </button>
+                <span className={styles.titulo}>Panel de Control</span>
+            </div>
+            <div className={styles.derecha}>
+                <span className={styles.email}>{usuario?.email}</span>
+                <button
+                    className={styles.botonSalir}
+                    onClick={manejarCerrarSesion}
+                >
+                    Salir
+                </button>
+            </div>
+        </div>
+    );
 }

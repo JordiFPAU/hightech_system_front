@@ -13,11 +13,22 @@ const crearInstancia = (baseURL) => {
         }
         return config;
     }, (error) => Promise.reject(error));
+    instancia.interceptors.response.use(
+        (response) => response,
+        (error) => {
+            if (error.response?.status === 401) {
+                localStorage.removeItem('token');
+                localStorage.removeItem('usuario');
+                window.location.href = '/login';
+            }
+            return Promise.reject(error);
+        }
+    );
 
     return instancia;
 };
 
-export const authApi     = crearInstancia('http://localhost:8081');
-export const inventarioApi = crearInstancia('http://localhost:8082');
-export const logisticaApi  = crearInstancia('http://localhost:8083');
-export const geoApi        = crearInstancia('http://localhost:8084');
+export const authApi       = crearInstancia('http://localhost:9090/api/auth');
+export const inventarioApi = crearInstancia('http://localhost:9090/api/inventario');
+export const logisticaApi  = crearInstancia('http://localhost:9090/api/logistica');
+export const geoApi        = crearInstancia('http://localhost:9090/api/geo');

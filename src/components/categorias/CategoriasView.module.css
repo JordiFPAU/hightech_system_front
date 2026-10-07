@@ -116,17 +116,19 @@
     color: #475569;
 }
 
-/* Tabla */
+
 .tablaContenedor {
     background-color: #ffffff;
     border: 0.5px solid #e2e8f0;
     border-radius: 12px;
-    overflow: hidden;
+    overflow-x: auto;         
+    -webkit-overflow-scrolling: touch;
 }
 
 .tabla {
     width: 100%;
     border-collapse: collapse;
+    min-width: 600px; 
 }
 
 .tabla th {

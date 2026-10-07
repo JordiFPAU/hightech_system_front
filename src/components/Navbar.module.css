@@ -1,44 +1,71 @@
 .navbar {
-    height: 60px;
+    height: 52px;
     background-color: #ffffff;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-bottom: 0.5px solid #e2e8f0;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0 30px;
-    position: fixed;
+    justify-content: space-between;
+    padding: 0 24px;
+    position: sticky;
     top: 0;
-    left: 250px;
-    right: 0;
-    z-index: 100;
-}
-.textoPanel {
-  font-weight: 500;
-  color: #475569;
+    z-index: 10;
 }
 
-.usuarioSeccion {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+.izquierda {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.botonMenu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #475569;
+    padding: 4px;
+    line-height: 1;
+}
+
+.titulo {
+    font-size: 14px;
+    font-weight: 500;
+    color: #475569;
+}
+
+.derecha {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .email {
-  color: #64748b;
-  font-size: 14px;
+    font-size: 13px;
+    color: #94a3b8;
 }
 
 .botonSalir {
-  padding: 6px 12px;
-  background-color: #ef4444;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.2s;
+    padding: 6px 14px;
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
 .botonSalir:hover {
-  background-color: #dc2626;
+    background-color: #fecaca;
+}
+
+@media (max-width: 768px) {
+    .botonMenu {
+        display: block;
+    }
+
+    .email {
+        display: none;
+    }
 }
