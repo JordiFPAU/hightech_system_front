@@ -21,11 +21,9 @@ export default function LoginView() {
 
     try {
       const data = await loginRequest(email, password);
-      console.log('¡Login exitoso!', data);
       iniciarSesion(data.token, data.usuario);
       navigate('/dashboard');
     } catch (err) {
-      console.error('Error en el login:', err);
       setError(err.response?.data?.error || 'No se pudo conectar con el servidor backend.');
     } finally {
       setCargando(false);

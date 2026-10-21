@@ -35,16 +35,13 @@ export default function RegistrarEntregaModal({
                 getPedidos(),
                 getUsuarios()
             ]);
-            // Solo pedidos en ruta o pendientes
             setPedidos(pedidosRes.data.filter(p =>
                 ['PENDIENTE', 'EN_RUTA'].includes(p.estado)
             ));
-            // Solo repartidores
             setRepartidores(usuariosRes.data.filter(u =>
                 u.rol?.nombre === 'REPARTIDOR'
             ));
         } catch (err) {
-            console.error('Error cargando datos:', err);
         }
     };
 

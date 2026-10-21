@@ -28,14 +28,12 @@ export default function EntregasView() {
                 u.rol?.nombre === 'REPARTIDOR'
             );
 
-            // Construir mapa id → nombre
             const mapa = {};
             repartidores.forEach(r => {
                 mapa[r.id] = `${r.nombre} ${r.apellido}`;
             });
             setRepartidoresMap(mapa);
 
-            // Cargar entregas de todos los repartidores
             const todasEntregas = await Promise.all(
                 repartidores.map(r => getEntregas(r.id))
             );

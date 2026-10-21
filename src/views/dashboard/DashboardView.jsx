@@ -57,8 +57,6 @@ export default function DashboardView() {
             setPedidosRecientes(pedidos.data.slice(0, 5));
             setAlertasStock(alertas.data.slice(0, 3));
 
-        } catch (error) {
-            console.error('Error cargando dashboard:', error);
         } finally {
             setCargando(false);
         }

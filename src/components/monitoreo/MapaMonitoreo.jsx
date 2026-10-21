@@ -4,7 +4,6 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import styles from './MapaMonitoreo.module.css';
 
-// Fix del ícono de Leaflet con React
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
     iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
@@ -23,7 +22,6 @@ const crearIconoRepartidor = (nombre) => {
     });
 };
 
-// Componente para centrar el mapa cuando hay ubicaciones
 function CentrarMapa({ ubicaciones }) {
     const mapa = useMap();
 
@@ -48,7 +46,6 @@ export default function MapaMonitoreo({ repartidores, ubicaciones }) {
         repartidoresMap[r.id] = `${r.nombre} ${r.apellido}`;
     });
 
-    // Centro de Quito por defecto
     const centroQuito = [-0.1807, -78.4678];
 
     return (

@@ -15,7 +15,6 @@ export default function ProtectedRoute({ rolesPermitidos }) {
         return <Navigate to="/login" replace />;
     }
 
-    // Si se especifican roles y el usuario no tiene el rol requerido
     if (rolesPermitidos && !rolesPermitidos.includes(usuario?.rol?.nombre)) {
         return <Navigate to="/dashboard" replace />;
     }

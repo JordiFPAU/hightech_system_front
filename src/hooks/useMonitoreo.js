@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import { getUsuarios } from '../api/authApi';
 import { getUbicacionActual } from '../api/geoApi';
 
-const INTERVALO_ACTUALIZACION = 15000; // 15 segundos
+const INTERVALO_ACTUALIZACION = 15000;
 
 export function useMonitoreo() {
     const [repartidores, setRepartidores] = useState([]);
@@ -18,7 +18,6 @@ export function useMonitoreo() {
             setRepartidores(reps);
             return reps;
         } catch (err) {
-            console.error('Error cargando repartidores:', err);
             return [];
         }
     }, []);

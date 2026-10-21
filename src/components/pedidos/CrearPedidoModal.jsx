@@ -59,7 +59,6 @@ export default function CrearPedidoModal({
         const nuevosItems = [...form.items];
         nuevosItems[index] = { ...nuevosItems[index], [campo]: valor };
 
-        // Auto-completar precio cuando se selecciona un producto
         if (campo === 'productoId') {
             const producto = productos.find(p => p.id === valor);
             if (producto) {
@@ -112,7 +111,6 @@ export default function CrearPedidoModal({
 
                 <form onSubmit={manejarSubmit}>
 
-                    {/* Datos generales */}
                     <div className={modalStyles.seccion}>
                         <p className={modalStyles.seccionTitulo}>Datos generales</p>
                         <div className={modalStyles.grilla}>
@@ -183,7 +181,6 @@ export default function CrearPedidoModal({
                         </div>
                     </div>
 
-                    {/* Productos */}
                     <div className={modalStyles.seccion}>
                         <div className={modalStyles.seccionHeader}>
                             <p className={modalStyles.seccionTitulo}>Productos</p>

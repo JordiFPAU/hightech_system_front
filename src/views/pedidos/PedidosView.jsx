@@ -39,7 +39,6 @@ export default function PedidosView() {
             setPedidoEstado(null);
             cargarPedidos();
         } catch (err) {
-            console.error('Error al cambiar estado:', err);
         } finally {
             setGuardandoEstado(false);
         }
