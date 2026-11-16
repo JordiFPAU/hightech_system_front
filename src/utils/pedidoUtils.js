@@ -8,20 +8,20 @@ export const ESTADOS_PEDIDO = [
 ];
 
 export const BADGE_ESTADO = {
-    PENDIENTE:  { bg: '#fef9c3', color: '#854d0e' },
-    EN_RUTA:    { bg: '#dbeafe', color: '#1d4ed8' },
-    ENTREGADO:  { bg: '#dcfce7', color: '#166534' },
-    PARCIAL:    { bg: '#ffedd5', color: '#9a3412' },
-    FALLIDO:    { bg: '#fee2e2', color: '#991b1b' },
+    PENDIENTE:  { bg: 'transparent', color: '#d97706' },
+    EN_RUTA:    { bg: 'transparent', color: '#0ea5e9' },
+    ENTREGADO:  { bg: 'transparent', color: '#16a34a' },
+    PARCIAL:    { bg: 'transparent', color: '#ea580c' },
+    FALLIDO:    { bg: 'transparent', color: '#dc2626' },
 };
 
 
 export const ESTADOS_ENTREGA = ['COMPLETA', 'PARCIAL', 'FALLIDA'];
 
 export const BADGE_ESTADO_ENTREGA = {
-    COMPLETA:  { bg: '#dcfce7', color: '#166534' },
-    PARCIAL:   { bg: '#ffedd5', color: '#9a3412' },
-    FALLIDA:   { bg: '#fee2e2', color: '#991b1b' },
+    COMPLETA:  { bg: 'transparent', color: '#16a34a' },
+    PARCIAL:   { bg: 'transparent', color: '#ea580c' },
+    FALLIDA:   { bg: 'transparent', color: '#dc2626' },
 };
 
 

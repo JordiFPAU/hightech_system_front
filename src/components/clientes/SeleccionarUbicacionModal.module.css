@@ -1,0 +1,30 @@
+.modal {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    width: 100%;
+    max-width: 640px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.instruccion {
+    font-size: 13px;
+    color: #64748b;
+}
+
+.coordenadas {
+    font-size: 13px;
+    color: #0ea5e9;
+    font-weight: 500;
+}
+
+.contenedorMapa {
+    height: 380px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 0.5px solid #e2e8f0;
+}

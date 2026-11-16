@@ -7,7 +7,11 @@ import styles from './MonitoreoView.module.css';
 export default function MonitoreoView() {
     const { repartidores, ubicaciones, cargando, ultimaActualizacion } = useMonitoreo();
 
-    const totalActivos = Object.keys(ubicaciones).length;
+    const TIMEOUT_MS = 2 * 60 * 1000;
+    const totalActivos = Object.values(ubicaciones).filter(u =>
+        u?.ultimaActualizacion &&
+        (Date.now() - new Date(u.ultimaActualizacion).getTime()) < TIMEOUT_MS
+    ).length;
 
     return (
         <div className={styles.contenedor}>

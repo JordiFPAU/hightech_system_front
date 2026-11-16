@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+const GATEWAY = process.env.REACT_APP_GATEWAY_URL || 'http://localhost:9090';
+
 const crearInstancia = (baseURL) => {
     const instancia = axios.create({
         baseURL,
@@ -28,7 +30,7 @@ const crearInstancia = (baseURL) => {
     return instancia;
 };
 
-export const authApi       = crearInstancia('http://localhost:9090/api/auth');
-export const inventarioApi = crearInstancia('http://localhost:9090/api/inventario');
-export const logisticaApi  = crearInstancia('http://localhost:9090/api/logistica');
-export const geoApi        = crearInstancia('http://localhost:9090/api/geo');
+export const authApi       = crearInstancia(`${GATEWAY}/api/auth`);
+export const inventarioApi = crearInstancia(`${GATEWAY}/api/inventario`);
+export const logisticaApi  = crearInstancia(`${GATEWAY}/api/logistica`);
+export const geoApi        = crearInstancia(`${GATEWAY}/api/geo`);

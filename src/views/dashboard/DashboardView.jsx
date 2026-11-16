@@ -106,30 +106,26 @@ export default function DashboardView() {
                 <div className={styles.metricaCard}>
                     <p className={styles.metricaLabel}>Productos</p>
                     <p className={styles.metricaValor}>{metricas.totalProductos.toLocaleString()}</p>
-                    <span className={`${styles.badge} ${styles.badgeWarning}`}>
+                    <p className={metricas.stockCritico > 0 ? styles.metricaSub__warn : styles.metricaSub}>
                         {metricas.stockCritico} en stock crítico
-                    </span>
+                    </p>
                 </div>
                 <div className={styles.metricaCard}>
                     <p className={styles.metricaLabel}>Pedidos hoy</p>
                     <p className={styles.metricaValor}>{metricas.pedidosHoy}</p>
-                    <span className={`${styles.badge} ${styles.badgeAccent}`}>
+                    <p className={metricas.pedidosUrgentes > 0 ? styles.metricaSub__accent : styles.metricaSub}>
                         {metricas.pedidosUrgentes} urgentes
-                    </span>
+                    </p>
                 </div>
                 <div className={styles.metricaCard}>
                     <p className={styles.metricaLabel}>Entregas completadas</p>
                     <p className={styles.metricaValor}>{metricas.entregasHoy}</p>
-                    <span className={`${styles.badge} ${styles.badgeSuccess}`}>
-                        completadas
-                    </span>
+                    <p className={styles.metricaSub}>de hoy</p>
                 </div>
                 <div className={styles.metricaCard}>
                     <p className={styles.metricaLabel}>Clientes</p>
                     <p className={styles.metricaValor}>{metricas.totalClientes}</p>
-                    <span className={`${styles.badge} ${styles.badgeSuccess}`}>
-                        activos
-                    </span>
+                    <p className={styles.metricaSub}>registrados</p>
                 </div>
             </div>
 

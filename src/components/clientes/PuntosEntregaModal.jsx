@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { getPuntosEntrega, createPuntoEntrega, deletePuntoEntrega } from '../../api/logisticaApi';
 import styles from '../categorias/CategoriasView.module.css';
 import puntoStyles from './PuntosEntregaModal.module.css';
+import SeleccionarUbicacionModal from './SeleccionarUbicacionModal';
 
 const FORM_INICIAL = {
     descripcion: '',
@@ -18,8 +19,7 @@ export default function PuntosEntregaModal({ abierto, cliente, onCerrar }) {
     const [guardando, setGuardando] = useState(false);
     const [error, setError] = useState(null);
     const [mostrarForm, setMostrarForm] = useState(false);
-
-
+    const [modalMapaAbierto, setModalMapaAbierto] = useState(false);
 
     const cargarPuntos = useCallback(async () => {
         try {
@@ -43,7 +43,6 @@ export default function PuntosEntregaModal({ abierto, cliente, onCerrar }) {
         e.preventDefault();
         setGuardando(true);
         setError(null);
-
         try {
             await createPuntoEntrega({
                 clienteId: cliente.id,
@@ -87,7 +86,6 @@ export default function PuntosEntregaModal({ abierto, cliente, onCerrar }) {
 
                 {error && <div className={styles.error}>{error}</div>}
 
-                {/* Lista de puntos */}
                 {cargando ? (
                     <p className={styles.cargando}>Cargando puntos...</p>
                 ) : puntos.length === 0 ? (
@@ -129,7 +127,6 @@ export default function PuntosEntregaModal({ abierto, cliente, onCerrar }) {
                     </div>
                 )}
 
-                {/* Formulario nuevo punto */}
                 {mostrarForm ? (
                     <form onSubmit={manejarCrear} className={puntoStyles.formNuevo}>
                         <p className={puntoStyles.formTitulo}>Nuevo punto de entrega</p>
@@ -154,32 +151,33 @@ export default function PuntosEntregaModal({ abierto, cliente, onCerrar }) {
                                 onChange={e => setForm({ ...form, direccionTexto: e.target.value })}
                             />
                         </div>
-                        <div className={puntoStyles.filaCoordenadas}>
-                            <div className={styles.campo}>
-                                <label className={styles.etiqueta}>Latitud *</label>
-                                <input
-                                    type="number"
-                                    required
-                                    step="any"
-                                    className={styles.input}
-                                    placeholder="-0.1807"
-                                    value={form.latitud}
-                                    onChange={e => setForm({ ...form, latitud: e.target.value })}
-                                />
-                            </div>
-                            <div className={styles.campo}>
-                                <label className={styles.etiqueta}>Longitud *</label>
-                                <input
-                                    type="number"
-                                    required
-                                    step="any"
-                                    className={styles.input}
-                                    placeholder="-78.4678"
-                                    value={form.longitud}
-                                    onChange={e => setForm({ ...form, longitud: e.target.value })}
-                                />
-                            </div>
+
+                        {/* Selector de ubicación en mapa */}
+                        <div className={styles.campo}>
+                            <label className={styles.etiqueta}>Ubicación *</label>
+                            {form.latitud && form.longitud ? (
+                                <div className={puntoStyles.ubicacionSeleccionada}>
+                                    <span> {Number(form.latitud).toFixed(6)}, {Number(form.longitud).toFixed(6)}</span>
+                                    <button
+                                        type="button"
+                                        className={styles.botonSecundario}
+                                        onClick={() => setModalMapaAbierto(true)}
+                                    >
+                                        Cambiar
+                                    </button>
+                                </div>
+                            ) : (
+                                <button
+                                    type="button"
+                                    className={styles.botonSecundario}
+                                    style={{ width: '100%' }}
+                                    onClick={() => setModalMapaAbierto(true)}
+                                >
+                                    Seleccionar en el mapa
+                                </button>
+                            )}
                         </div>
+
                         <div className={styles.campo}>
                             <label className={puntoStyles.checkLabel}>
                                 <input
@@ -201,7 +199,7 @@ export default function PuntosEntregaModal({ abierto, cliente, onCerrar }) {
                             <button
                                 type="submit"
                                 className={styles.botonPrimario}
-                                disabled={guardando}
+                                disabled={guardando || !form.latitud || !form.longitud}
                             >
                                 {guardando ? 'Guardando...' : 'Agregar punto'}
                             </button>
@@ -217,6 +215,12 @@ export default function PuntosEntregaModal({ abierto, cliente, onCerrar }) {
                     </button>
                 )}
             </div>
+
+            <SeleccionarUbicacionModal
+                abierto={modalMapaAbierto}
+                onConfirmar={(lat, lng) => setForm({ ...form, latitud: lat, longitud: lng })}
+                onCerrar={() => setModalMapaAbierto(false)}
+            />
         </div>
     );
 }

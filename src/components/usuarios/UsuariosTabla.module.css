@@ -8,8 +8,8 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background-color: #e0e7ff;
-    color: #4338ca;
+    background-color: #f1f5f9;
+    color: #64748b;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,9 +19,8 @@
 }
 
 .badgeRol {
-    display: inline-flex;
-    padding: 3px 10px;
-    border-radius: 99px;
     font-size: 12px;
     font-weight: 500;
+    color: #475569;
+    letter-spacing: 0.3px;
 }

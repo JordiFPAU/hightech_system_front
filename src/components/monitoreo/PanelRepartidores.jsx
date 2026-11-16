@@ -23,7 +23,10 @@ export default function PanelRepartidores({
                 ) : (
                     repartidores.map(rep => {
                         const ubicacion = ubicaciones[rep.id];
-                        const enLinea = !!ubicacion;
+                        const TIMEOUT_MS = 2 * 60 * 1000;
+                        const enLinea = !!ubicacion &&
+                            ubicacion.ultimaActualizacion &&
+                            (Date.now() - new Date(ubicacion.ultimaActualizacion).getTime()) < TIMEOUT_MS;
                         return (
                             <div key={rep.id} className={styles.item}>
                                 <div className={styles.avatar}>

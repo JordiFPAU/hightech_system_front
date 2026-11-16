@@ -74,17 +74,17 @@
 
 .botonEliminar {
     padding: 5px 12px;
-    background-color: #fee2e2;
-    color: #991b1b;
-    border: 0.5px solid #fca5a5;
+    background-color: transparent;
+    color: #ef4444;
+    border: none;
     border-radius: 5px;
     font-size: 13px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: color 0.2s;
 }
 
 .botonEliminar:hover {
-    background-color: #fecaca;
+    color: #dc2626;
 }
 
 .botonEliminarModal {
@@ -180,25 +180,17 @@
     font-size: 14px;
 }
 
-/* Badges */
+/* Estado texto */
 .badgeActivo {
-    display: inline-flex;
-    padding: 3px 10px;
-    border-radius: 99px;
     font-size: 12px;
     font-weight: 500;
-    background-color: #dcfce7;
-    color: #166534;
+    color: #16a34a;
 }
 
 .badgeInactivo {
-    display: inline-flex;
-    padding: 3px 10px;
-    border-radius: 99px;
     font-size: 12px;
     font-weight: 500;
-    background-color: #f1f5f9;
-    color: #64748b;
+    color: #94a3b8;
 }
 
 /* Mensajes */

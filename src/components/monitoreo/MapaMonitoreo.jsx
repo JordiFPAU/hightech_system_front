@@ -40,11 +40,20 @@ function CentrarMapa({ ubicaciones }) {
     return null;
 }
 
+const TIMEOUT_MS = 2 * 60 * 1000;
+const esActivo = (ubicacion) =>
+    !!ubicacion?.ultimaActualizacion &&
+    (Date.now() - new Date(ubicacion.ultimaActualizacion).getTime()) < TIMEOUT_MS;
+
 export default function MapaMonitoreo({ repartidores, ubicaciones }) {
     const repartidoresMap = {};
     repartidores.forEach(r => {
         repartidoresMap[r.id] = `${r.nombre} ${r.apellido}`;
     });
+
+    const ubicacionesActivas = Object.fromEntries(
+        Object.entries(ubicaciones).filter(([, u]) => esActivo(u))
+    );
 
     const centroQuito = [-0.1807, -78.4678];
 
@@ -82,9 +91,9 @@ export default function MapaMonitoreo({ repartidores, ubicaciones }) {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
 
-                <CentrarMapa ubicaciones={ubicaciones} />
+                <CentrarMapa ubicaciones={ubicacionesActivas} />
 
-                {Object.entries(ubicaciones).map(([repartidorId, ubicacion]) => {
+                {Object.entries(ubicacionesActivas).map(([repartidorId, ubicacion]) => {
                     const nombre = repartidoresMap[repartidorId] || 'Repartidor';
                     return (
                         <Marker

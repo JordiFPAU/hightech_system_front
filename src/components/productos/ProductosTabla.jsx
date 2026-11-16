@@ -61,7 +61,7 @@ export default function ProductosTabla({ productos, onEditar, onEliminar , onAju
                                             className={productoStyles.botonStock}
                                             onClick={() => onAjustarStock(prod)}
                                         >
-                                            Stock
+                                            Inventario
                                         </button>
 
                                         <button

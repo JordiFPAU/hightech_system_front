@@ -1,9 +1,6 @@
 .badge {
-    display: inline-flex;
-    padding: 3px 10px;
-    border-radius: 99px;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .observaciones {
